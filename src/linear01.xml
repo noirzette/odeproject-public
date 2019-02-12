@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This file is part of the book                            	   -->
-<!--                                                          	   -->
-<!--    Ordinary Differential Equations Project      		  	   -->
-<!--                                                         	   -->
-<!-- Copyright (C) 2013-2017 Thomas W. Judson                      -->
-<!-- See the file COPYING for copying conditions.             	   -->
+<!-- This file is part of the book                                 -->
+<!--                                                               -->
+<!--    Ordinary Differential Equations Project                    -->
+<!--                                                               -->
+<!-- Copyright (C) 2013-2018 Thomas W. Judson                      -->
+<!-- See the file COPYING for copying conditions.                  -->
 
 <section xml:id="linear01" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Linear Algebra in a Nutshell</title>
@@ -16,7 +16,7 @@
             <md>
                 <mrow>\frac{dx}{dt} &amp; = a x + b y,</mrow>
                 <mrow>\frac{dy}{dt} &amp; = c x + d y.</mrow>
-            </md>.
+            </md>
         If we let 
             <me>A =
             \begin{pmatrix}
@@ -48,7 +48,7 @@
         In other words, we can write our system as
             <me>\frac{d \mathbf x}{dt} = A {\mathbf x},</me>
         where
-            <me>\mathbf x' = \frac{d \mathbf x}{dt} =  \begin{pmatrix} x'(t) \\ y'(t) \end{pmatrix}.</me></p>
+            <me>\mathbf x' = \frac{d \mathbf x}{dt} = \begin{pmatrix} x'(t) \\ y'(t) \end{pmatrix}.</me></p>
 
     </introduction>
 
@@ -57,7 +57,7 @@
 
         <p>A short review of linear algebra and <m>2 \times 2</m> matrices is useful at this point. Recall that any system of two equations in two variables,
             <md>
-                <mrow>a x + by &amp; = \alpha,</mrow>
+                <mrow>ax + by &amp; = \alpha,</mrow>
                 <mrow>cx + dy &amp; = \beta,</mrow>
             </md>
         can be written as a matrix equation
@@ -76,14 +76,14 @@
             \begin{pmatrix}
             \alpha \\ \beta
             \end{pmatrix}.</men>
-        We will denote the <m>2 \times 2</m> <term>coefficient matrix</term> by <m>A</m>.  That is,
+        We will denote the <m>2 \times 2</m> <term>coefficient matrix</term><idx><h>matrix</h><h>coefficient matrix</h></idx> by <m>A</m>. That is,
             <me>A = 
             \begin{pmatrix}
             a &amp; b \\
             c &amp; d 
             \end{pmatrix}.</me></p>
 
-        <p>If a solution for the system<nbsp /><xref ref="equation-linear01-2x2-3" /> exists, it is easy to find. A unique solution will occur exactly when the matrix <m>A</m> is <term>invertible</term> (or <term>nonsingular</term>).  The unique solution is given by
+        <p>If a solution for the system<nbsp /><xref ref="equation-linear01-2x2-3" /> exists, it is easy to find. A unique solution will occur exactly when the matrix <m>A</m> is <term>invertible</term><idx><h>matrix</h><h>invertible matrix</h></idx> (or <term>nonsingular</term><idx><h>matrix</h><h>nonsingular matrix</h></idx>). The unique solution is given by
             <me>\begin{pmatrix}
             x \\ y 
             \end{pmatrix}
@@ -102,7 +102,7 @@
             d &amp; -b \\
             -c &amp; a 
             \end{pmatrix}.</me>
-        The matrix <m>A</m> is invertible if and only if its <term>determinant</term> is nonzero,
+        The matrix <m>A</m> is invertible if and only if its <term>determinant</term><idx><h>matrix</h><h>determinant</h></idx> is nonzero,
             <me>\det(A) = ad - bc \neq 0.</me>
         If <m>\det(A) = 0</m>, then we either have no solution or infinitely many solutions.</p>
 
@@ -115,22 +115,22 @@
             \begin{pmatrix}
             0 \\ 0
             \end{pmatrix}.</me>
-        If <m>\det(A) \neq 0</m>, we have exactly one solution, <m>x = 0</m> and <m>y = 0</m>. On the other hand, if <m>\det(A) = 0</m>, we have infinitely many solutions.  Suppose that <m>a \neq 0</m>. Then <m>x = - (b/a)y</m>, and
-            <me>-c \left(  \frac{b}{a}\right) y + dy = 0.</me>
-        Therefore, <m>(ad - bc) y =0</m>. Since <m>\det(A) = ad - bc = 0</m>, the variable <m>y</m> can assume any value and <m>x  = - (b/a)y</m>. Thus, the solutions to our system lie along a line through the origin. In fact, we will always get a line of solutions through the origin as long as at least one entry in our matrix is nonzero.<fn>We will not worry about the <m>2 \times 2</m> zero matrix, since it will not play a role in our study of linear equations.</fn></p>
+        If <m>\det(A) \neq 0</m>, we have exactly one solution, <m>x = 0</m> and <m>y = 0</m>. On the other hand, if <m>\det(A) = 0</m>, we have infinitely many solutions. Suppose that <m>a \neq 0</m>. Then <m>x = - (b/a)y</m>, and
+            <me>-c \left( \frac{b}{a}\right) y + dy = 0.</me>
+        Therefore, <m>(ad - bc) y =0</m>. Since <m>\det(A) = ad - bc = 0</m>, the variable <m>y</m> can assume any value and <m>x = - (b/a)y</m>. Thus, the solutions to our system lie along a line through the origin. In fact, we will always get a line of solutions through the origin as long as at least one entry in our matrix is nonzero.<fn>We will not worry about the <m>2 \times 2</m> zero matrix, since it will not play a role in our study of linear equations.</fn></p>
 
     </subsection>
 
     <subsection xml:id="subsection-linear01-linear-independence">
         <title>Linear Independence</title>
 
-        <p>We say that two vectors <m>{\mathbf x}</m> and <m>{\mathbf y}</m> in <m>{\mathbb R}^2</m> are <term>linearly independent</term> if they do not lie on the same line through the origin. If, on the other hand, they do lie on the same line, then the vectors are <term>linearly dependent</term>. Equivalently, two vectors are linearly dependent if one vector is a multiple of the other. We leave the proof of the following theorem as an exercise.</p>
+        <p>We say that two vectors <m>{\mathbf x}</m> and <m>{\mathbf y}</m> in <m>{\mathbb R}^2</m> are <term>linearly independent</term><idx><h>vectors</h><h>linearly independent</h></idx> if they do not lie on the same line through the origin. If, on the other hand, they do lie on the same line, then the vectors are <term>linearly dependent</term><idx><h>vectors</h><h>linearly dependent</h></idx>. Equivalently, two vectors are linearly dependent if one vector is a multiple of the other. We leave the proof of the following theorem as an exercise.</p>
 
 <todo>Make sure to put the proof of the following theorem in the exercises.</todo>
 
         <theorem xml:id="theorem-systems04-independence-determinant">
             <statement>
-                <p>Let <m>{\mathbf x} = (x_1, x_2)</m> and <m>{\mathbf y} = (y_1, y_2)</m>.  Then <m>{\mathbf x}</m> and <m>{\mathbf y}</m> are linearly independent if and only if
+                <p>Let <m>{\mathbf x} = (x_1, x_2)</m> and <m>{\mathbf y} = (y_1, y_2)</m>. Then <m>{\mathbf x}</m> and <m>{\mathbf y}</m> are linearly independent if and only if
                 <me>\det
                 \begin{pmatrix}
                 x_1 &amp; y_1 \\
@@ -140,7 +140,7 @@
             </statement>
         </theorem>  
             
-        <p>If we have a pair of linearly independent vectors in <m>{\mathbb R}^2</m>, then we can write any vector in <m>{\mathbb R}^2</m> as a unique <term>linear combination</term> of the two vectors. That is, given two linearly independent vectors <m>{\mathbf x} = (x_1, x_2)</m> and <m>{\mathbf y} = (y_1, y_2)</m>, we can write <m>{\mathbf z} = (z_1, z_2)</m> as 
+        <p>If we have a pair of linearly independent vectors in <m>{\mathbb R}^2</m>, then we can write any vector in <m>{\mathbb R}^2</m> as a unique <term>linear combination</term><idx><h>vectors</h><h>linear combination</h></idx> of the two vectors. That is, given two linearly independent vectors <m>{\mathbf x} = (x_1, x_2)</m> and <m>{\mathbf y} = (y_1, y_2)</m>, we can write <m>{\mathbf z} = (z_1, z_2)</m> as 
             <me>\begin{pmatrix}
             z_1 \\ z_2
             \end{pmatrix}
@@ -166,12 +166,12 @@
             x_2 &amp; y_2
             \end{pmatrix}
             \neq 0.</me>
-        Two vectors are said to be a <term>basis</term> for <m>{\mathbb R}^2</m> if we can write any vector in <m>{\mathbb R}^2</m> as a linear combination of these two vectors. By our arguments above, any two linearly independent vectors will form a basis for <m>{\mathbb R}^2</m>.</p>              
+        Two vectors are said to be a <term>basis</term><idx>basis</idx> for <m>{\mathbb R}^2</m> if we can write any vector in <m>{\mathbb R}^2</m> as a linear combination of these two vectors. By our arguments above, any two linearly independent vectors will form a basis for <m>{\mathbb R}^2</m>.</p>
 
         <example>
             <p>The vectors <m>{\mathbf e}_1 = (1, 0)</m> and <m>{\mathbf e}_2 = (0, 1)</m> form a basis for <m>{\mathbb R}^2</m>. Indeed, if <m>{\mathbf z} = (z_1, z_2)</m>, then we can write
                 <me>{\mathbf z} = z_1 {\mathbf e}_1 + z_2 {\mathbf e}_2.</me>
-            The vectors <m>{\mathbf e}_1</m> and <m>{\mathbf e}_2</m> are called the <term>standard basis</term> for <m>{\mathbb R}^2</m>.</p>
+            The vectors <m>{\mathbf e}_1</m> and <m>{\mathbf e}_2</m> are called the <term>standard basis</term><idx><h>basis</h><h>standard basis</h></idx> for <m>{\mathbb R}^2</m>.</p>
         </example>
 
         <example>
@@ -182,9 +182,9 @@
                 1 &amp; 2
                 \end{pmatrix}
                 \neq 0,</me>
-            these vectors form a basis for <m>{\mathbb R}^2</m>.  If <m>{\mathbf z} = (-5, -4)</m>, then we can write
+            these vectors form a basis for <m>{\mathbb R}^2</m>. If <m>{\mathbf z} = (-5, -4)</m>, then we can write
             <me>{\mathbf z} = 2 {\mathbf v}_1 - 3 {\mathbf v}_2.</me>
-            We say that the <term>coordinates</term> of <m>{\mathbf z}</m> are <m>(2, -3)</m> with respect to the basis <m>\{ {\mathbf v}_1, {\mathbf v}_2 \}</m>.</p>
+            We say that the <term>coordinates</term><idx>coordinates</idx> of <m>{\mathbf z}</m> are <m>(2, -3)</m> with respect to the basis <m>\{ {\mathbf v}_1, {\mathbf v}_2 \}</m>.</p>
         </example>
 
         <example>
@@ -196,9 +196,9 @@
     </subsection>
 
     <subsection xml:id="subsection-linear01-finding-eigenvalues">
-    	<title>Finding Eigenvalues and Eigenvectors</title>
+        <title>Finding Eigenvalues and Eigenvectors</title>
 
-        <p>A nonzero vector <m>{\mathbf v}</m> is an <term>eigenvector</term> of <m>A</m> if <m>A {\mathbf v} = \lambda {\mathbf v}</m> for some <m>\lambda \in {\mathbf R}</m>. The constant <m>\lambda</m> is called an <term>eigenvalue</term> of <m>A</m>.  Letting
+        <p>A nonzero vector <m>{\mathbf v}</m> is an <term>eigenvector</term><idx>eigenvector</idx> of <m>A</m> if <m>A {\mathbf v} = \lambda {\mathbf v}</m> for some <m>\lambda \in {\mathbf R}</m>. The constant <m>\lambda</m> is called an <term>eigenvalue</term><idx>eigenvalue</idx> of <m>A</m>. Letting
             <me>A = \begin{pmatrix}
             a &amp; b \\
             c &amp; d 
@@ -304,7 +304,7 @@
                 </md>
             Thus, <m>\lambda = 5</m> or <m> -1</m>.</p>
 
-    		<p>To see this from a different perspective, we will rewrite equation <xref ref="equation-linear01-characteristic" /> as
+            <p>To see this from a different perspective, we will rewrite equation <xref ref="equation-linear01-characteristic" /> as
                 <md>
                     <mrow>x + 2 y &amp; = \lambda x</mrow>
                     <mrow>4 x + 3 y &amp; = \lambda y.</mrow>
@@ -329,14 +329,14 @@
                 </ul></p>
         </example>
 
-	</subsection>
+    </subsection>
 
-	<subsection xml:id="subsection-linear01-important-lessons">
-    	<title>Important Lessons</title>
+    <subsection xml:id="subsection-linear01-important-lessons">
+        <title>Important Lessons</title>
 
-		<p><ul>
-			
-			<li>The roots of the characteristic polynomial, <m>\det(A - \lambda I)</m>, of a matrix <m>A</m> are the eigenvalues of <m>A</m>.  Given a specific eigenvalue, <m>\lambda</m>, for a matrix <m>A</m>, the eigenvectors associated with <m>A</m> are the nonzero solutions of the system of equations
+        <p><ul>
+            
+            <li>The roots of the characteristic polynomial, <m>\det(A - \lambda I)</m>, of a matrix <m>A</m> are the eigenvalues of <m>A</m>. Given a specific eigenvalue, <m>\lambda</m>, for a matrix <m>A</m>, the eigenvectors associated with <m>A</m> are the nonzero solutions of the system of equations
                 <me>(A - \lambda I)
                 \begin{pmatrix}
                 x \\ y
@@ -346,132 +346,465 @@
                 0 \\ 0
                 \end{pmatrix}.</me></li>
 
-			<li>If <m>{\mathbf v}_1</m> and <m>{\mathbf v}_2</m> are eigenvectors of two distinct real eigenvalues of a matrix <m>A</m>, then <m>{\mathbf v}_1</m> and <m>{\mathbf v}_2</m> are linearly independent.</li>
+            <li>If <m>{\mathbf v}_1</m> and <m>{\mathbf v}_2</m> are eigenvectors of two distinct real eigenvalues of a matrix <m>A</m>, then <m>{\mathbf v}_1</m> and <m>{\mathbf v}_2</m> are linearly independent.</li>
 
         </ul></p>
-	</subsection>
+    </subsection>
 
     <exercises xml:id="exercises-linear01"  filenamebase="linear01">
     <title>Exercises</title>
 
-    <exercise>
-         <statement>
-            <p>If
-            <me>A = 
-            \begin{pmatrix}
-            1 &amp; -2 \\
-            3 &amp; 1
-            \end{pmatrix}
-            \quad \text{and} \quad
-            B =
-            \begin{pmatrix}
-            4 &amp; 1 \\
-            -1 &amp; -2
-            \end{pmatrix},</me>
-        find each of the following.
-            <ol>
-                <li><m>A + B</m></li>
+        <exercise>
+            <statement>
+                <p> Given a column vector 
+                    <me>\mathbf x =
+                    \begin{pmatrix}
+                    x_1 \\ x_2
+                    \end{pmatrix},</me>
+                we define the <term>transpose</term><idx><h>matrix</h><h>transpose</h></idx> of <m>\mathbf x</m> to be
+                    <me>\mathbf x^T =
+                    \begin{pmatrix}
+                    x_1 \amp x_2
+                    \end{pmatrix}.</me>
+                If
+                    <me>A = 
+                    \begin{pmatrix}
+                    3 &amp; -2 \\
+                    0 &amp; -1
+                    \end{pmatrix},
+                    \mathbf x =
+                    \begin{pmatrix}
+                    4 \\ 1
+                    \end{pmatrix},
+                    \quad \text{and} \quad
+                    \mathbf y =
+                    \begin{pmatrix}
+                    -2 \\ 3
+                    \end{pmatrix},</me>
+                find each of the following.
+                <ol cols="2">
+                    <li><m>A \mathbf x</m></li>
 
-                <li><m>2A - 3B</m></li>
+                    <li><m>A \mathbf y</m></li>
 
-                <li><m>AB</m></li>
+                    <li><m>\mathbf x^T \mathbf y</m></li>
 
-                <li><m>BA</m></li>
+                    <li><m>\mathbf y^T \mathbf x</m></li>
 
-                <li><m>A^{-1}</m></li>
-
-                <li><m>B^{-1}</m></li>
-            </ol></p>
-        </statement>
-
-
-
-    </exercise>
-
-    <exercise>
-         <statement>
-            <p>If
-            <me>A = 
-            \begin{pmatrix}
-            2 &amp; 1 - i \\
-            2 - i &amp; 2
-            \end{pmatrix}
-            \quad \text{and} \quad
-            B =
-            \begin{pmatrix}
-            4i &amp; 1 - i \\
-            1 + 3i &amp; -2 -i
-            \end{pmatrix},</me>
-        find each of the following.
-            <ol>
-                <li><m>A + B</m></li>
-
-                <li><m>3A - 2B</m></li>
-
-                <li><m>AB</m></li>
-
-                <li><m>BA</m></li>
-            </ol></p>
-        </statement>
-
-
-
-    </exercise>
+                </ol></p>
+            </statement>
+        </exercise>
 
         <exercise>
-         <statement>
-            <p>If
-            <me>A = 
-            \begin{pmatrix}
-            3 &amp; -2 \\
-            0 &amp; -1
-            \end{pmatrix},
-            \mathbf x =
-            \begin{pmatrix}
-            4 \\ 1
-            \end{pmatrix},
-            \quad \text{and} \quad
-            \mathbf y =
-            \begin{pmatrix}
-            -2 \\ 3
-            \end{pmatrix},</me>
-        find each of the following.
-            <ol>
-                <li><m>A \mathbf x</m></li>
+             <statement>
+                <p>If
+                    <me>A = 
+                    \begin{pmatrix}
+                    1 &amp; -2 \\
+                    3 &amp; 1
+                    \end{pmatrix}
+                    \quad \text{and} \quad
+                    B =
+                    \begin{pmatrix}
+                    4 &amp; 1 \\
+                    -1 &amp; -2
+                    \end{pmatrix},</me>
+                find each of the following.
+                <ol cols="3">
+                    <li><m>A + B</m></li>
 
-                <li><m>A \mathbf y</m></li>
+                    <li><m>2A - 3B</m></li>
 
-                <li><m>\mathbf x^T \mathbf y</m></li>
+                    <li><m>AB</m></li>
 
-                <li><m>\mathbf y^T \mathbf x</m></li>
+                    <li><m>BA</m></li>
 
-            </ol></p>
-        </statement>
+                    <li><m>A^{-1}</m></li>
+
+                    <li><m>B^{-1}</m></li>
+                </ol></p>
+            </statement>
+
+        </exercise>
+
+        <exercise>
+             <statement>
+                <p>If
+                <me>A = 
+                \begin{pmatrix}
+                2 &amp; 1 - i \\
+                2 - i &amp; 2
+                \end{pmatrix}
+                \quad \text{and} \quad
+                B =
+                \begin{pmatrix}
+                4i &amp; 1 - i \\
+                1 + 3i &amp; -2 -i
+                \end{pmatrix},</me>
+            find each of the following.
+                <ol cols="2">
+                    <li><m>A + B</m></li>
+
+                    <li><m>3A - 2B</m></li>
+
+                    <li><m>AB</m></li>
+
+                    <li><m>BA</m></li>
+                </ol></p>
+            </statement>
+        </exercise>
+
+        <exercisegroup cols="2" xml:id="exercises-linear01-determinants">
+            <title>Finding Determinants</title>
+            <introduction><p>Find the determinant of each of the matrices <m>A</m> in <xref ref="exercises-linear01-determinants"/>.</p></introduction>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    3 &amp; 4 \\
+                    2 &amp; 1
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    6 &amp; 3 \\
+                    -4 &amp; -1
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    3 &amp; 1 \\
+                    -1 &amp; 1
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                \begin{pmatrix}
+                    -1 &amp; 6 \\
+                    -2 &amp; 6
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    3 &amp; 1 \\
+                    -2 &amp; 0
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A =
+                    \begin{pmatrix}
+                    1 &amp; -2 \\
+                    1 &amp; 3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                \begin{pmatrix}
+                    2 &amp; 0 \\
+                    0 &amp; -3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    1 &amp; 2 \\
+                    0 &amp; 3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    2 &amp; 1 \\
+                    1 &amp; 3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    1 &amp; -2 \\
+                    -3 &amp; 2
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+        </exercisegroup>
+
+        <exercisegroup cols="2" xml:id="exercises-linear01-matrix-inverse">
+            <title>Finding Inverses</title>
+            <introduction><p>Find the inverse (if it exists) of each of the matrices <m>A</m> in <xref ref="exercises-linear01-matrix-inverse"/>. that is, find the matrix <m>A^{-1}</m> such that <m>A A^{-1} = A^{-1} A = I</m>, where
+                <me>I = \begin{pmatrix}
+                1 &amp; 0 \\
+                0 &amp; 1
+                \end{pmatrix}.</me></p></introduction>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    1 &amp; 2 \\
+                    3 &amp; 4
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    6 &amp; 3 \\
+                    -4 &amp; -1
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    3 &amp; -7 \\
+                    -2 &amp; 5
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    8 &amp; 7 \\
+                    2 &amp; 2
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    -3 &amp; 4 \\
+                    -2 &amp; 5
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    3 &amp; 2 \\
+                    4 &amp; 3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    4 &amp; 0 \\
+                    0 &amp; -3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    1 &amp; 2 \\
+                    -3 &amp; -6
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+        </exercisegroup>
+
+        <exercisegroup cols="2" xml:id="exercises-linear01-eigenvalues">
+            <title>Finding Eigenvalues and Eigenvectors</title>
+            <introduction><p>For each of the matrices <m>A</m> in <xref ref="exercises-linear01-eigenvalues"/>:
+                <ol label="(a)">
+
+                    <li>Find the characteristic polynomial of <m>A</m>.</li>
+
+                    <li>Find all of the eigenvalues of <m>A</m>.</li>
+
+                    <li>Find an eigenvector for each eigenvalue of <m>A</m>.</li>
+
+                </ol></p></introduction>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    3 &amp; 4 \\
+                    2 &amp; 1
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    6 &amp; 3 \\
+                    -4 &amp; -1
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    3 &amp; 1 \\
+                    -1 &amp; 1
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    -1 &amp; 6 \\
+                    -2 &amp; 6
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    3 &amp; 1 \\
+                    -2 &amp; 0
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    1 &amp; -2 \\
+                    1 &amp; 3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    2 &amp; 0 \\
+                    0 &amp; -3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    1 &amp; 2 \\
+                    0 &amp; 3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    2 &amp; 1 \\
+                    1 &amp; 3
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><m>\displaystyle A = 
+                    \begin{pmatrix}
+                    1 &amp; -2 \\
+                    -3 &amp; 2
+                    \end{pmatrix}</m></p>
+                </statement>
+            </exercise>
+        </exercisegroup>
+
+        <exercise>
+             <statement>
+                <p>For what values of <m>a</m> are the vectors <m>(2, a)</m> and <m>(4,-1)</m> linearly independent?</p>
+            </statement>
+        </exercise>
+
+        <exercise>
+             <statement>
+                <p>We define the <term>trace</term><idx><h>matrix</h><h>trace</h></idx> of a <m>2 \times 2</m> matrix to be the sum of its diagonal entries. That is, the trace of 
+                    <me>A
+                    =\begin{pmatrix}
+                    a &amp; b \\
+                    c &amp; d
+                    \end{pmatrix}</me>
+                is <m>\trace(A) = a + d</m>. Show that <m>\trace(AB) = \trace(BA)</m> for any <m>2 \times 2</m> matrices <m>A</m> and <m>B</m>.</p>
+            </statement>
+        </exercise>
+
+        <exercise>
+             <statement>
+                <p>Let <m>A</m> and <m>B</m> be two <m>2 \times 2</m> matrices. Show that <m>\det(AB) = \det(A) \det(B)</m>.</p>
+            </statement>
+        </exercise>
+
+        <exercise>
+             <statement>
+                <p>Let <m>A</m> be a <m>2 \times 2</m> matrix. Show that <m>\det(A^{-1]}) = 1/</m>.</p>
+            </statement>
+        </exercise>
+
+        <exercise>
+             <statement>
+                <p>Define the <m>2 \times 2</m> <term>identity matrix</term><idx><h>matrix</h><h>identity</h></idx> to be
+                    <me>I
+                    =\begin{pmatrix}
+                    1 &amp; 0 \\
+                    0 &amp; 1
+                    \end{pmatrix}.</me>
+                Show that <m>AI = IA = A</m> for any <m>2 \times 2</m> matrix.</p>
+            </statement>
+        </exercise>
+
+        <exercise>
+             <statement>
+                <p>An <term>upper triangular matrix</term><idx><h>matrix</h><h>uppper triangular</h></idx> <m>A</m> is a matrix of the form
+                    <me>A
+                    =\begin{pmatrix}
+                    \alpha &amp; \gamma \\
+                    0 &amp; \beta
+                    \end{pmatrix}.</me>
+                Show that <m>A</m> has eigenvalues <m>\alpha</m> and <m>\beta</m>.</p>
+            </statement>
+        </exercise>
+
+        <exercise>
+             <statement>
+                <p>Let <m>{\mathbf x} = (x_1, x_2)</m> and <m>{\mathbf y} = (y_1, y_2)</m>. Prove that <m>{\mathbf x}</m> and <m>{\mathbf y}</m> are linearly independent if and only if
+                <me>\det
+                \begin{pmatrix}
+                x_1 &amp; y_1 \\
+                x_2 &amp; y_2
+                \end{pmatrix}
+                \neq 0.</me></p>
+            </statement>
+        </exercise>
 
 
-
-    </exercise>
-
-    <exercise>
-         <statement>
-            <p>Let <m>{\mathbf x} = (x_1, x_2)</m> and <m>{\mathbf y} = (y_1, y_2)</m>. Prove that <m>{\mathbf x}</m> and <m>{\mathbf y}</m> are linearly independent if and only if
-            <me>\det
-            \begin{pmatrix}
-            x_1 &amp; y_1 \\
-            x_2 &amp; y_2
-            \end{pmatrix}
-            \neq 0.</me></p>
-        </statement>
-
-
-
-    </exercise>
-
-
-</exercises>
+    </exercises>
 
     <subsection number="no" xml:id="subsection-linear01-sage-project">
-        <title>Project<mdash />Finding Eigenvalues and Eigenvectors</title>
+        <title>Sage<mdash />Finding Eigenvalues and Eigenvectors</title>
 
         <p><em>Sage</em> can be used to find eigenvalues and eigenvectors for a matrix <m>A</m> for now. Consider the matrix
             <me>A =
@@ -503,7 +836,7 @@
             </output>
         </sage>
 
-        <p><em>Sage</em> will also allow us find eigenvectors for each of the eigenvalues of <m>A</m>.</p>
+        <p><em>Sage</em> will also allow us to find eigenvectors for each of the eigenvalues of <m>A</m>.</p>
 
         <sage>
             <input>
@@ -522,8 +855,8 @@
             \begin{pmatrix}
             1 &amp; 1 \\
             -1 &amp; 3
-            \end{pmatrix}.</me> 
-        in the <em>Sage</em> cell below, we obtain a single repeated eigenvalue <m>\lambda = 2</m> and only one eigenvector <m>\mathbf v = (1,1)</m>.  The multiplicity of this eigenvalue is 2.  In our previous examples, we obtained two linearly independent eigenvalues allowing us to solve initial value problems given a general solution.</p>
+            \end{pmatrix}</me> 
+        in the <em>Sage</em> cell below, we obtain a single repeated eigenvalue <m>\lambda = 2</m> and only one eigenvector <m>\mathbf v = (1,1)</m>. The multiplicity of this eigenvalue is 2.  In our previous examples, we obtained two linearly independent eigenvalues allowing us to solve initial value problems given a general solution.</p>
 
         <sage>
             <input>
@@ -535,7 +868,7 @@
             </output>
         </sage>
 
-        <p>We may also matrices such as 
+        <p>We may also have matrices such as 
             <me>C =
             \begin{pmatrix}
             4 &amp; 1 \\

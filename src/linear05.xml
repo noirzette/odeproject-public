@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This file is part of the book                            	   -->
-<!--                                                          	   -->
-<!--    Ordinary Differential Equations Project      		  	   -->
-<!--                                                         	   -->
-<!-- Copyright (C) 2013-2017 Thomas W. Judson                      -->
-<!-- See the file COPYING for copying conditions.             	   -->
+<!-- This file is part of the book                                 -->
+<!--                                                               -->
+<!--    Ordinary Differential Equations Project                    -->
+<!--                                                               -->
+<!-- Copyright (C) 2013-2018 Thomas W. Judson                      -->
+<!-- See the file COPYING for copying conditions.                  -->
 
 <section xml:id="linear05" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Repeated Eigenvalues</title>
@@ -23,7 +23,7 @@
             \begin{pmatrix}
             x \\ y
             \end{pmatrix}.</men>
-        The characteristic polynomial of the system <xref ref="equation-linear05-repeated-eigenvalues" /> is <m>\lambda^2 - 6\lambda + 9</m> and <m>\lambda^2 - 6 \lambda + 9 = (\lambda - 3)^2</m>. This polynomial has a single root <m>\lambda = 3</m> with eigenvector <m>\mathbf v = (1, -1)</m>. This there is a single straightline solution for this system (<xref ref="figure-linear05-one-straightline-solution" />). The strategy that we used in find the general solution to a system with distinct real eigenvalues will clearly have to be modified if we are to find a general solution to a system with a single eigenvalue.</p>
+        The characteristic polynomial of the system <xref ref="equation-linear05-repeated-eigenvalues" /> is <m>\lambda^2 - 6\lambda + 9</m> and <m>\lambda^2 - 6 \lambda + 9 = (\lambda - 3)^2</m>. This polynomial has a single root <m>\lambda = 3</m> with eigenvector <m>\mathbf v = (1, 1)</m>. This there is a single straightline solution for this system (<xref ref="figure-linear05-one-straightline-solution" />). The strategy that we used to find the general solution to a system with distinct real eigenvalues will clearly have to be modified if we are to find a general solution to a system with a single eigenvalue.</p>
 
         <figure xml:id="figure-linear05-one-straightline-solution">
 
@@ -51,11 +51,11 @@
         </figure>
  
     </introduction>
-	
+    
     <subsection xml:id="subsection-linear05-repeated-eigenvalues">
-    	<title>Repeated Eigenvalues</title>
-		
-		<p>The remaining case the we must consider is when the characteristic equation of a matrix <m>A</m> has repeated roots. The simplest such case is
+        <title>Repeated Eigenvalues</title>
+        
+        <p>The remaining case the we must consider is when the characteristic equation of a matrix <m>A</m> has repeated roots. The simplest such case is
             <me>\begin{pmatrix}
             dx/dt \\ dy/dt
             \end{pmatrix}
@@ -76,17 +76,17 @@
             <me>{\mathbf x}(t) = \alpha e^{\lambda t} {\mathbf v}.</me>
         Each solution to our system lies on a straight line through the origin and either tends to the origin if <m>\lambda \lt 0</m> or away from zero if <m>\lambda \gt 0</m>.</p>
 
-		<p>A more interesting case occurs if 
+        <p>A more interesting case occurs if 
             <me>A = \begin{pmatrix} \lambda &amp; 1 \\ 0 &amp; \lambda \end{pmatrix}.</me>
         Again, both eigenvalues are <m>\lambda</m>; however, there is only one linearly independent eigenvector, which we can take to be <m>(1, 0)</m>. Therefore, we have a single straight-line solution
             <me>{\mathbf x}_1(t) = \alpha e^{\lambda t}\begin{pmatrix} 1 \\ 0 \end{pmatrix}.</me></p>
 
-		<p>To find other solutions, we will rewrite the system as
+        <p>To find other solutions, we will rewrite the system as
             <md>
                 <mrow>x' &amp; = \lambda x + y</mrow>
                 <mrow>y' &amp; = \lambda y.</mrow>
             </md>
-        This is a partially coupled system.  If <m>y \neq 0</m>, the solution of the second equation is
+        This is a partially coupled system. If <m>y \neq 0</m>, the solution of the second equation is
             <me>y(t) = \beta e^{\lambda t}.</me>
         Therefore, the first equation becomes
             <me>x' = \lambda x + \beta e^{\lambda t},</me>
@@ -104,32 +104,32 @@
             \end{pmatrix}.</me></p>
 
         <example>
-        	<p>Consider the linear system
-        		<md>
-        			<mrow>x' \amp = -x + y</mrow>
-        			<mrow>y' \amp = -y</mrow>
-        			<mrow>x(0) \amp = 1</mrow>
-        			<mrow>y(0) \amp = 3.</mrow>
-        		</md>
-        	The matrix that corresponds to this system is
-        		<me>A = \begin{pmatrix}
-	            -1 &amp; 1 \\
-	            0 &amp; -1
-	            \end{pmatrix}</me>
-	        has a single eigenvalue, <m>\lambda = -1</m>. An eigenvector for <m>\lambda</m> is <m>\mathbf v = (1, 0)</m>. Thus, the general solution to our system is
-	    		<md>
-	    			<mrow>x(t) \amp = c_1 e^{-t} + c_2 t e^{-t}</mrow>
-	    			<mrow>y(t) \amp = c_2 e^{-t}.</mrow>
-	    		</md>
-	    	Applying the initial conditions <m>x(0) = 1</m> and <m>y(0) = 3</m>, the solution to our initial value problem is
-	    		<md>
-	    			<mrow>x(t) \amp = e^{-t} + 3te^{-t}</mrow>
-	    			<mrow>y(t) \amp = 3e^{-t}.</mrow>
-	    		</md>
-	    	Notice that we have only one straightline solution (<xref ref="figure-linear05-repeated-phase-portrait" />).</p>
-	    </example>
+            <p>Consider the linear system
+                <md>
+                    <mrow>x' \amp = -x + y</mrow>
+                    <mrow>y' \amp = -y</mrow>
+                    <mrow>x(0) \amp = 1</mrow>
+                    <mrow>y(0) \amp = 3.</mrow>
+                </md>
+            The matrix that corresponds to this system is
+                <me>A = \begin{pmatrix}
+                -1 &amp; 1 \\
+                0 &amp; -1
+                \end{pmatrix}</me>
+            has a single eigenvalue, <m>\lambda = -1</m>. An eigenvector for <m>\lambda</m> is <m>\mathbf v = (1, 0)</m>. Thus, the general solution to our system is
+                <md>
+                    <mrow>x(t) \amp = c_1 e^{-t} + c_2 t e^{-t}</mrow>
+                    <mrow>y(t) \amp = c_2 e^{-t}.</mrow>
+                </md>
+            Applying the initial conditions <m>x(0) = 1</m> and <m>y(0) = 3</m>, the solution to our initial value problem is
+                <md>
+                    <mrow>x(t) \amp = e^{-t} + 3te^{-t}</mrow>
+                    <mrow>y(t) \amp = 3e^{-t}.</mrow>
+                </md>
+            Notice that we have only one straightline solution (<xref ref="figure-linear05-repeated-phase-portrait" />).</p>
+        </example>
 
-		<figure xml:id="figure-linear05-repeated-phase-portrait">
+        <figure xml:id="figure-linear05-repeated-phase-portrait">
             <image width="60%" xml:id="linear05-repeated-phase-portrait">
                 <sageplot>
                     x, y ,t = var('x y t')
@@ -157,12 +157,12 @@
             <caption>Phase portrait for repeated eigenvalues</caption>
         </figure>
 
-	</subsection>
+    </subsection>
 
     <subsection xml:id="subsection-linear05-quick-start">
         <title>Solving Systems with Repeated Eigenvalues</title>
 
-        <p>If the characteristic equation has only a single repeated root, there is a single eigenvalue. If this is the situation, then we actually have two separate cases to examine, depending one whether or not we can find two linearly independent eigenvectors.</p>
+        <p>If the characteristic equation has only a single repeated root, there is a single eigenvalue. If this is the situation, then we actually have two separate cases to examine, depending on whether or not we can find two linearly independent eigenvectors.</p>
 
         <example>
             <p>Suppose we have the system <m>\mathbf x' = A \mathbf x</m>, where
@@ -179,7 +179,7 @@
                 \begin{pmatrix}
                 0 \\ 1
                 \end{pmatrix}.</me>
-            This is not two surprising since the system
+            This is not too surprising since the system
                 <md>
                     <mrow>x' &amp; = 2x</mrow>
                     <mrow>y' &amp; = 2y</mrow>
@@ -230,16 +230,16 @@
                 \end{pmatrix}.</me></p>
         </example>
 
-            <p>If the eigenvalue is positive, we will have a nodal source. If it is negative, we will have a nodal sink. Notice that we have only given a recipe for finding a solution to <m>\mathbf x' = A \mathbf x</m>, where <m>A</m> has a repeated eigenvalue and any tow eigen vectors are linearly dependent. We will justify our procedure in the next section (<xref ref="linear06" />).</p>
+            <p>If the eigenvalue is positive, we will have a nodal source. If it is negative, we will have a nodal sink. Notice that we have only given a recipe for finding a solution to <m>\mathbf x' = A \mathbf x</m>, where <m>A</m> has a repeated eigenvalue and any two eigenvectors are linearly dependent. We will justify our procedure in the next section (<xref ref="linear06" />).</p>
 
     </subsection>
 
     <subsection xml:id="subsection-linear05-important-lessons">
-    	<title>Important Lessons</title>
-    	
-    	<p><ul>
-        	
-			<li>If
+        <title>Important Lessons</title>
+        
+        <p><ul>
+            
+            <li>If
                 <me>A
                 =
                 \begin{pmatrix}
@@ -262,7 +262,7 @@
 
         </ul></p>
 
-	</subsection>
+    </subsection>
 
     <exercises xml:id="exercises-linear05"  filenamebase="linear05">
     <title>Exercises</title>

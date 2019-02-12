@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This file is part of the book                            	   -->
-<!--                                                          	   -->
-<!--    Ordinary Differential Equations Project      		  	   -->
-<!--                                                         	   -->
-<!-- Copyright (C) 2013-2017 Thomas W. Judson                      -->
-<!-- See the file COPYING for copying conditions.             	   -->
+<!-- This file is part of the book                                 -->
+<!--                                                               -->
+<!--    Ordinary Differential Equations Project                    -->
+<!--                                                               -->
+<!-- Copyright (C) 2013-2018 Thomas W. Judson                      -->
+<!-- See the file COPYING for copying conditions.                  -->
 
 <section xml:id="firstlook06" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Existence and Uniqueness of Solutions</title>
@@ -15,7 +15,7 @@
     </introduction>
     
     <subsection xml:id="subsection-firstlook06-existence">
-    	<title>The Existence and Uniqueness Theorem</title>
+        <title>The Existence and Uniqueness Theorem</title>
 
         <p>The following theorem tells us that solutions to first-order differential equations exist and are unique under certain reasonable conditions.</p>
 
@@ -27,10 +27,10 @@
                 there exists a unique solution <m>u = u(t)</m> for  <m>x' = f(t, x)</m> and <m>x(t_0) = x_0</m> on some interval <m>|t - t_0| \lt h</m> contained in the interval <m>|t - t_0| \lt a</m>.</p>
             </statement>
         </theorem> 
-    	
-    	<p>Let us examine some consequences of the existence and uniqueness of solutions.</p>
-    	
-    	<example>
+        
+        <p>Let us examine some consequences of the existence and uniqueness of solutions.</p>
+        
+        <example>
             <p>Consider the initial value problem <m>y' = y^{1/3}</m> with <m>y(0) = 0</m> and <m>t \geq 0</m>. Separating the variables,
                 <me>y^{-1/3} y' = dt.</me>
             Thus,
@@ -44,12 +44,12 @@
                     <mrow>y &amp; = - \left( \frac{2}{3} t \right)^{3/2},</mrow>
                     <mrow>y &amp; \equiv 0.</mrow>
                 </md>
-            This is especially troubling if we are looking for equilibrium solutions. Although <m>y' = y^{1/3}</m> is an autonomous differential equation, there is no equilibrium solution at <m>y = 0</m>. The problem is that 
+            This is especially troubling if we are looking for equilibrium solutions. Although <m>y' = y^{1/3}</m> is an autonomous differential equation, there is no equilibrium solution at <m>y = 0</m>. The problem is that
                 <me>\frac{\partial}{\partial y} y^{1/3} = \frac{1}{3} y^{-2/3}</me>
             is not defined at <m>y = 0</m>.</p>
         </example>
 
-		<example>
+        <example>
             <p>Suppose that <m>y' = y^2</m> with <m>y(0) = 1</m>. Since <m>f(t,y) = y^2</m> and <m>\partial f/ \partial y = 2y</m> are continuous everywhere, a unique solution exists near <m>t = 0</m>. Separating the variables,
                 <me>\frac{1}{y^2} \; dy = dt,</me>
             we see that
@@ -66,12 +66,12 @@
                 <p>The Existence and Uniqueness Theorem tells us that the integral curves of any differential equation satisfying the appropriate hypothesis, cannot cross. If the curves did cross, we could take the point of intersection as the initial value for the differential equation. In this case, we would no longer guaranteed unique solutions to a differential equation.</p>
         </remark>
 
-	</subsection>
-	
+    </subsection>
+    
     <subsection xml:id="subsection-firstlook06-picard">
-    	<title>Picard Iteration</title>
+        <title>Picard Iteration</title>
 
-		<p>It was Emile Picard (1856<ndash />1941) who developed the method of successive approximations to show the existence of solutions of ordinary differential equations. He proved that it is possible to construct a sequence of functions that converges to a solution of the differential equation. One of the first steps towards understanding <term>Picard iteration</term><idx>Picard iteration</idx> is to realize that an initial value problem can be recast in terms of an integral equation.</p>
+        <p>It was Emile Picard (1856<ndash />1941) who developed the method of successive approximations to show the existence of solutions of ordinary differential equations. He proved that it is possible to construct a sequence of functions that converges to a solution of the differential equation. One of the first steps towards understanding <term>Picard iteration</term><idx>Picard iteration</idx> is to realize that an initial value problem can be recast in terms of an integral equation.</p>
 
         <theorem xml:id="theorem-firstlook06-picard">
             <statement>
@@ -95,11 +95,11 @@
                 <me>u(t) - u(t_0) = \int_{t_0}^t u'(s) \, ds = \int_{t_0}^t f(s, u(s)) \, ds</me>
             Since <m>u(t_0) = x_0</m>, the function <m>u</m> is a solution of the integral equation.</p>
 
-			<p>Conversely, assume that
+            <p>Conversely, assume that
                 <me>u(t) = x_0 + \int_{t_0}^t f(s, u(s)) \, ds.</me>
             If we differentiate both sides of this equation, we obtain <m>u'(t) = f(t, u(t))</m>. Since
                 <me>u(t_0) = x_0 + \int_{t_0}^{t_0} f(s, u(s)) \, ds = x_0,</me>
-            the initial condition is fulfilled.</p>     
+            the initial condition is fulfilled.</p>
         </proof>
             
         <p>To show the existence of a solution to the initial value problem
@@ -118,7 +118,7 @@
         Our goal is to show that <m>u_n(t) \rightarrow u(t)</m> as <m>n \rightarrow \infty</m>. Furthermore, we need to show that <m>u</m> is the continuous, unique solution to our initial value problem. We will leave the proof of Picard's Theorem to a series of exercises, but let us see how this works by developing an example.</p>
 
 
-		<example>
+        <example>
             <p>Consider the exponential growth equation,
                 <md>
                     <mrow>\frac{dx}{dt} &amp; = kx</mrow>
@@ -144,15 +144,15 @@
                 </md>
             However, this is just the <m>n</m>th partial sum for the power series for <m>u(t) = e^{kt}</m>, which is what we expected.</p>
         </example>
-		
+        
     </subsection>
-		
-	<subsection xml:id="subsection-firstlook06-important-lessons">
+        
+    <subsection xml:id="subsection-firstlook06-important-lessons">
         <title>Important Lessons</title>
-		
-		<p><ul>
-		
-                <li><p>Existence and uniqueness of solutions of differential has important implications. Let <m>x' = f(t, x)</m> have the initial condition <m>x(t_0) = x_0</m>.  If <m>f</m> and <m>\partial f/ \partial x</m> are continuous functions on the rectangle 
+        
+        <p><ul>
+        
+                <li><p>Existence and uniqueness of solutions of differential equations has important implications. Let <m>x' = f(t, x)</m> have the initial condition <m>x(t_0) = x_0</m>. If <m>f</m> and <m>\partial f/ \partial x</m> are continuous functions on the rectangle
                     <me>R = \left\{ (t, x) : 0 \leq |t - t_0| \lt a, 0 \leq |x - x_0| \lt b \right\},</me>
                 there exists a unique solution <m>u = u(t)</m> for  <m>x' = f(t, x)</m> and <m>x(t_0) = x_0</m> on some interval <m>|t - t_0| \lt h</m> contained in the interval <m>|t - t_0| \lt a</m>. In particular,
                     <ul>
@@ -173,11 +173,11 @@
                 if and only if <m>u</m> is a solution to the integral equation
                     <me>x(t) = x_0 + \int_{t_0}^t f(s, x(s)) \, ds.</me></li>
 
-                <li>Existence and uniqueness of solutions is proved by Picard iteration. This is of particular interest since the proof actually tells us how to construct as sequence of functions that converge to our solution.</li>
+                <li>Existence and uniqueness of solutions is proved by Picard iteration. This is of particular interest since the proof actually tells us how to construct a sequence of functions that converge to our solution.</li>
 
             </ul></p>
-				
-	</subsection>
+                
+    </subsection>
 
     <exercises xml:id="exercises-firstlook06"  filenamebase="firstlook06">
         <title>Exercises</title>
@@ -256,7 +256,7 @@
                             0,      &amp;  t \leq t_0 \\
                             (t - t_0)^3,      &amp; t \gt t_0
                             \end{cases}</me>
-                        is a solution for the initial value problem, where <m>t_0</m> is any real number.  Hence, there exists an infinite number of solutions to the initial value problem.  [<em>Hint</em>:  Make sure that the derivative of <m>y(t)</m> exists at <m>t = t_0</m>. ]</li>
+                        is a solution for the initial value problem, where <m>t_0</m> is any real number.  Hence, there exists an infinite number of solutions to the initial value problem. [<em>Hint</em>:  Make sure that the derivative of <m>y(t)</m> exists at <m>t = t_0</m>. ]</li>
 
                         <li>Explain why this example does not contradict the Existence and Uniqueness Theorem.</li>
 
@@ -275,7 +275,7 @@
                     0,      &amp; 0 \leq x \lt 1 \\
                     1,      &amp; x = 1.
                     \end{cases}</me>
-                This is an example of a sequence of continuous functions that does not converge to a continuous function, which helps explain the need for <em>uniform continuity</em> in the proof of the Existence and Uniqueness Theorem.</p>
+                This is an example of a sequence of continuous functions that does not converge to a continuous function, which helps explain the need for <term>uniform continuity</term> in the proof of the Existence and Uniqueness Theorem.</p>
             </statement>
 
 
@@ -301,122 +301,100 @@
             </statement>
 
 
-        </exercise>   
-
-        <exercise>
-            <statement>
-                <p><em>The following series of exercises, prove the Existence and Uniqueness Theorem for first-order differential equations.</em></p>
-
-                <p>Use the Fundamental Theorem of Calculus to show that the function <m>u = u(t)</m> is a solution to the initial value problem
-                    <md>
-                        <mrow>x' &amp; = f(t, x)</mrow>
-                        <mrow>x(t_0) &amp; = x_0,</mrow>
-                    </md>
-                if and only if <m>u</m> is a solution to the integral equation
-                    <me>x(t) = x_0 + \int_{t_0}^t f(s, x(s)) \, ds.</me></p>
-            </statement>
-
-
-        </exercise>
-     
-        <exercise>
-            <statement>
-                <p>If <m>\partial f/ \partial x</m> is continuous on the rectangle 
-                    <me>R = \left\{ (t, x) : 0 \leq |t - t_0| \lt a, 0 \leq |x - x_0| \lt b \right\},</me>
-                prove that there exists a <m>K \gt 0</m> such that
-                    <me>|f(t, x_1) - f(t, x_2) | \leq K |x_1 - x_2|</me>
-                for all <m>(t, x_1)</m> and <m>(t, x_2)</m> in <m>R</m>.</p>
-            </statement>
-
         </exercise>
 
-        <exercise>
-            <statement>
-                <p>Define  the sequence <m>\{  u_n \}</m> by
-                    <md>
-                        <mrow>u_0(t) &amp; = x_0,</mrow>
-                        <mrow>u_{n+1} &amp; = x_0 + \int_{t_0}^t f(s, u_n(s)) \, ds, \qquad n = 1, 2, \ldots.</mrow>
-                    </md>
-                Use the result of the previous exercise to show that
-                    <me>|f(t, u_n(t)) - f(t, u_{n-1}(t) )| \leq K|u_n(t) - u_{n-1}(t) |.</me></p>
-            </statement>
+        <exercisegroup xml:id="exercises-firstlook06-exist">
+            <title>Proof of the Existence and Uniqueness Theorem</title>
+            <introduction><p>In <xref ref="exercises-firstlook06-exist"/>, prove the Existence and Uniqueness Theorem for first-order differential equations.</p></introduction>
 
-
-        </exercise>
-        
-        <exercise>
-            <statement>
-                <p>Show that  there exists an <m>M \gt 0</m> such that
-                    <me>|u_1(t) - x_0| \leq M | t - t_0|.</me></p>
-            </statement>
-
-    
-
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>Show that
-                    <me>|u_2(t) - u_1(t)| \leq  \frac{KM | t - t_0|^2}{2}.</me></p>
-            </statement>
-
-
-
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>Use mathematical induction to show that
-                    <me>|u_n(t) - u_{n -1}(t)| \leq \frac{K^{n-1}M |t - t_0|^n}{n!}.</me></p>
-            </statement>
-
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>Since
-                    <me>u_n(t) = u_1(t) + [u_2(t) - u_1(t)] + \cdots + [u_n(t) - u_{n-1}(t)],</me>
-                we can view <m>u_n(t)</m> as a partial sum for the series
-                    <me>u_0(t) + \sum_{n=1}^\infty [u_n(t) - u_{n-1}(t)].</me>
-                If we can show that this series converges absolutely, then our sequence will converge to a function <m>u(t)</m>.  Show that
-                    <me>\sum_{n=1}^\infty |u_n(t) - u_{n-1}(t)| \leq \frac{M}{K} \sum_{n=1}^\infty \frac{(K |t - t_0|)^n}{n!} \leq \frac{M}{K} \left(  e^{K|h|} - 1 \right),</me>
-                where <m>h</m> is the maximum distance between <m>(t_0, x_0)</m> and the boundary of the rectangle <m>R</m>.  Since <m>|u_n(t) - u_{n -1}(t)| \to 0</m>, we know that <m>u_n(t)</m> converges to a continuous function <m>u(t)</m> that solves our equation.<fn>We must a theorem from advanced calculus here to ensure uniform continuity.  Any sequence of functions that converges uniformly, must converge to a continuous function.</fn></p>
-            </statement>
-
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p>To show uniqueness, assume that <m>u(t)</m> and <m>v(t)</m> are both solutions to 
-                    <me>x(t) = x_0 + \int_{t_0}^t f(s, x(s)) \, ds.</me>
-                Show that
-                    <me>|u(t) - v(t)|\leq K \int_{t_0}^t |u(s) - v(s)| \, ds.</me></p>
-            </statement>
-        </exercise>
-
-        <exercise>
-            <statement>
-                <p><ol>
-
-                        <li>Define<fn>A similar argument will work for <m>t \leq t_0</m>.</fn>
-                            <me>\phi(t) = \int_{t_0}^t |u(s) - v(s)| \, ds,</me>
-                        then <m>\phi(t_0) = 0</m> and <m>\phi(t) \geq 0</m> for <m>t \geq t_0</m>.  Show that
-                            <me>\phi'(t) = |u(t) - v(t)|.</me></li>
-
-                        <li>Since
-                            <me>|u(t) - v(t)| - K \int_{t_0}^t |u(s) - v(s)| \, ds \leq 0,</me>
-                        we know that 
-                            <me>\phi'(t) - K \phi(t) \leq 0.</me>
-                        Use this fact to show that
-                            <me>\frac{d}{dt} \left[ e^{-Kt} \phi(t) \right] \leq 0.</me>
-                        Conclude that
-                            <me>\phi(t) = \int_{t_0}^t |u(s) - v(s)| \, ds = 0</me>
-                        for <m>t \geq t_0</m> or for all <m>t \geq t_0</m> and <m>u(t) = v(t)</m>.</li>
-
-                    </ol></p>
-            </statement>
-        </exercise>   
-
+            <exercise>
+                <statement>
+                    <p>Use the Fundamental Theorem of Calculus to show that the function <m>u = u(t)</m> is a solution to the initial value problem
+                        <md>
+                            <mrow>x' &amp; = f(t, x)</mrow>
+                            <mrow>x(t_0) &amp; = x_0,</mrow>
+                        </md>
+                    if and only if <m>u</m> is a solution to the integral equation
+                        <me>x(t) = x_0 + \int_{t_0}^t f(s, x(s)) \, ds.</me></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>If <m>\partial f/ \partial x</m> is continuous on the rectangle 
+                        <me>R = \left\{ (t, x) : 0 \leq |t - t_0| \lt a, 0 \leq |x - x_0| \lt b \right\},</me>
+                    prove that there exists a <m>K \gt 0</m> such that
+                        <me>|f(t, x_1) - f(t, x_2) | \leq K |x_1 - x_2|</me>
+                    for all <m>(t, x_1)</m> and <m>(t, x_2)</m> in <m>R</m>.</p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>Define  the sequence <m>\{  u_n \}</m> by
+                        <md>
+                            <mrow>u_0(t) &amp; = x_0,</mrow>
+                            <mrow>u_{n+1} &amp; = x_0 + \int_{t_0}^t f(s, u_n(s)) \, ds, \qquad n = 1, 2, \ldots.</mrow>
+                        </md>
+                    Use the result of the previous exercise to show that
+                        <me>|f(t, u_n(t)) - f(t, u_{n-1}(t) )| \leq K|u_n(t) - u_{n-1}(t) |.</me></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>Show that  there exists an <m>M \gt 0</m> such that
+                        <me>|u_1(t) - x_0| \leq M | t - t_0|.</me></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>Show that
+                        <me>|u_2(t) - u_1(t)| \leq  \frac{KM | t - t_0|^2}{2}.</me></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>Use mathematical induction to show that
+                        <me>|u_n(t) - u_{n -1}(t)| \leq \frac{K^{n-1}M |t - t_0|^n}{n!}.</me></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>Since
+                        <me>u_n(t) = u_1(t) + [u_2(t) - u_1(t)] + \cdots + [u_n(t) - u_{n-1}(t)],</me>
+                    we can view <m>u_n(t)</m> as a partial sum for the series
+                        <me>u_0(t) + \sum_{n=1}^\infty [u_n(t) - u_{n-1}(t)].</me>
+                    If we can show that this series converges absolutely, then our sequence will converge to a function <m>u(t)</m>. Show that
+                        <me>\sum_{n=1}^\infty |u_n(t) - u_{n-1}(t)| \leq \frac{M}{K} \sum_{n=1}^\infty \frac{(K |t - t_0|)^n}{n!} \leq \frac{M}{K} \left( e^{K|h|} - 1 \right),</me>
+                    where <m>h</m> is the maximum distance between <m>(t_0, x_0)</m> and the boundary of the rectangle <m>R</m>.  Since <m>|u_n(t) - u_{n -1}(t)| \to 0</m>, we know that <m>u_n(t)</m> converges to a continuous function <m>u(t)</m> that solves our equation.<fn>We must a theorem from advanced calculus here to ensure uniform continuity.  Any sequence of functions that converges uniformly, must converge to a continuous function.</fn></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p>To show uniqueness, assume that <m>u(t)</m> and <m>v(t)</m> are both solutions to 
+                        <me>x(t) = x_0 + \int_{t_0}^t f(s, x(s)) \, ds.</me>
+                    Show that
+                        <me>|u(t) - v(t)|\leq K \int_{t_0}^t |u(s) - v(s)| \, ds.</me></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><ol>
+                            <li>Define<fn>A similar argument will work for <m>t \leq t_0</m>.</fn>
+                                <me>\phi(t) = \int_{t_0}^t |u(s) - v(s)| \, ds,</me>
+                            then <m>\phi(t_0) = 0</m> and <m>\phi(t) \geq 0</m> for <m>t \geq t_0</m>. Show that
+                                <me>\phi'(t) = |u(t) - v(t)|.</me></li>
+                            <li>Since
+                                <me>|u(t) - v(t)| - K \int_{t_0}^t |u(s) - v(s)| \, ds \leq 0,</me>
+                            we know that 
+                                <me>\phi'(t) - K \phi(t) \leq 0.</me>
+                            Use this fact to show that
+                                <me>\frac{d}{dt} \left[ e^{-Kt} \phi(t) \right] \leq 0.</me>
+                            Conclude that
+                                <me>\phi(t) = \int_{t_0}^t |u(s) - v(s)| \, ds = 0</me>
+                            for <m>t \geq t_0</m> or for all <m>t \geq t_0</m> and <m>u(t) = v(t)</m>.</li>
+                        </ol></p>
+                </statement>
+            </exercise>
+        </exercisegroup>
     </exercises> 
 
 <todo>More problems needed.</todo>
@@ -427,7 +405,7 @@
 <todo>Write project.</todo>
 
     </subsection>
-	
+    
 </section>
 
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This file is part of the book                            	   -->
-<!--                                                          	   -->
-<!--    Ordinary Differential Equations Project      		  	   -->
-<!--                                                         	   -->
+<!-- This file is part of the book                                 -->
+<!--                                                               -->
+<!--    Ordinary Differential Equations Project                    -->
+<!--                                                               -->
 <!-- Copyright (C) 2013-2017 Thomas W. Judson                      -->
-<!-- See the file COPYING for copying conditions.             	   -->
+<!-- See the file COPYING for copying conditions.                  -->
 
 <section xml:id="linear04" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Complex Eigenvalues</title>
@@ -23,7 +23,7 @@
             \begin{pmatrix}
             x \\ y
             \end{pmatrix}</men>
-        The characteristic polynomial of the system <xref ref="equation-linear04-complex-eigenvalues" /> is <m>\lambda^2 + 4\lambda + 5</m>. The roots of this polynomial are <m>\lambda_1 = -2 + i</m> and <m>\lambda_2 = -2 -i</m> with eigenvectors <m>\mathbf v_1 = (1, 1 + i)</m> and <m>\mathbf v_2 = (1, 1- i)</m>, respectively. It is clear from the phase portrait of the system that there are no straightline solutions (<xref ref="figure-linear04-no-straightline-solutions" />).  However, we would like to real solutions to a linear system with real coefficients.</p>
+        The characteristic polynomial of the system <xref ref="equation-linear04-complex-eigenvalues" /> is <m>\lambda^2 + 4\lambda + 5</m>. The roots of this polynomial are <m>\lambda_1 = -2 + i</m> and <m>\lambda_2 = -2 -i</m> with eigenvectors <m>\mathbf v_1 = (1, 1 + i)</m> and <m>\mathbf v_2 = (1, 1- i)</m>, respectively. It is clear from the phase portrait of the system that there are no straightline solutions (<xref ref="figure-linear04-no-straightline-solutions" />).  However, we would like to have real solutions for a linear system with real coefficients.</p>
 
         <figure xml:id="figure-linear04-no-straightline-solutions">
 
@@ -53,7 +53,7 @@
     </introduction>
 
     <subsection xml:id="subsection-linear04-complex-eigenvalues">
-    	<title>Complex Eigenvalues</title>
+        <title>Complex Eigenvalues</title>
 
         <p>Suppose that we have the system
             <me>\begin{pmatrix}
@@ -86,7 +86,7 @@
             \end{pmatrix};</me>
         however, this reduces to solving the equation <m>i \beta x = \beta y</m>. Thus, we can find a complex eigenvector <m>(1, i)</m>.  Consequently,
             <me>{\mathbf x}(t) = e^{i \beta t} \begin{pmatrix} 1 \\ i\end{pmatrix}</me>
-        is a complex solution to the system <m>{\mathbf x}' = A {\mathbf x}</m>.  The problem is that we have a real system of differential equations and would like real solutions. We can remedy the situation if we use <term>Euler's formula</term>, <fn>If you are unfamiliar with Euler's formula, try expanding both sides as a power series to check that we do indeed have a correct identity.</fn>
+        is a complex solution to the system <m>{\mathbf x}' = A {\mathbf x}</m>. The problem is that we have a real system of differential equations and would like real solutions. We can remedy the situation if we use <term>Euler's formula</term>, <fn>If you are unfamiliar with Euler's formula, try expanding both sides as a power series to check that we do indeed have a correct identity.</fn>
             <me>e^{i \beta t} = \cos \beta t + i \sin \beta t.</me></p>
 
         <p>Let us rewrite our solution as
@@ -152,9 +152,9 @@
             \end{pmatrix},</me>
         we know that the appropriate linear combination of <m>{\mathbf x}_{\text{Re}}(t)</m> and <m>{\mathbf x}_{\text{Im}}(t)</m> will provide a solution to any initial value problem.</p>
 
-		<p>We claim that 
+        <p>We claim that 
             <men xml:id="equation-linear04-real-imaginary-solution">{\mathbf x}(t) = c_1 {\mathbf x}_{\text{Re}}(t) + c_2 {\mathbf x}_{\text{Im}}(t)</men>
-        is a general solution to our system.  That is, we must be able to write every solution of our system as a linear combination of <m>{\mathbf x}_{\text{Re}}(t)</m> and <m>{\mathbf x}_{\text{Im}}(t)</m>.  If
+        is a general solution to our system. That is, we must be able to write every solution of our system as a linear combination of <m>{\mathbf x}_{\text{Re}}(t)</m> and <m>{\mathbf x}_{\text{Im}}(t)</m>.  If
             <me>{\mathbf y}(t) = \begin{pmatrix} u(t) \\ v(t) \end{pmatrix}</me> 
         is another solution to the system <m>{\mathbf x}' = A {\mathbf x}</m>, then
             <me>{\mathbf y}'(t) 
@@ -182,7 +182,7 @@
                 <mrow>&amp; =(\beta v(t) -i \beta u(t)) e^{i\beta t}+ (i \beta u(t) + i^2 \beta v(t)) e^{i\beta t}</mrow>
                 <mrow>&amp; = 0.</mrow>
             </md>
-        Therefore, <m>f(t)</m> is a complex constant and <m>f(t) = (u(t) + i v(t)) e^{i\beta t} = a + bi</m>.  We can now write <m>u(t) + iv(t) = (a + ib) e^{- i \beta t}</m>.  Thus,
+        Therefore, <m>f(t)</m> is a complex constant and <m>f(t) = (u(t) + i v(t)) e^{i\beta t} = a + bi</m>. We can now write <m>u(t) + iv(t) = (a + ib) e^{- i \beta t}</m>.  Thus,
             <md>
                 <mrow>u(t) + iv(t) &amp; = (a + ib) e^{- i \beta t}</mrow>
                 <mrow>&amp; = (a + ib) (\cos \beta t - i \sin \beta t)</mrow>
@@ -207,7 +207,7 @@
                 <mrow>&amp; = a {\mathbf x}_{\text{Re}}(t) + b{\mathbf x}_{\text{Im}}(t).</mrow>
             </md></p>
  
-		<p>Notice that the solutions
+        <p>Notice that the solutions
             <me>{\mathbf x}(t)
             =
             c_1
@@ -221,7 +221,7 @@
             \sin \beta t\\
              \cos \beta t
             \end{pmatrix}</me>
-        are periodic with period <m>2 \pi / \beta</m>.  This type of system is called a <term>center</term>.</p>
+        are periodic with period <m>2 \pi / \beta</m>. This type of system is called a <term>center</term>.</p>
 
         <example>
             <p>Consider the initial value problem
@@ -271,12 +271,12 @@
             <caption>Phase portrait for a center</caption>
         </figure>
 
-	</subsection>
+    </subsection>
 
     <subsection xml:id="subsection-linear04-spiral-sinks-sources">
-    	<title>Spiral Sinks and Sources</title>
+        <title>Spiral Sinks and Sources</title>
 
-		<p>Now let us consider the system <m>{\mathbf x}' = A {\mathbf x}</m>, where
+        <p>Now let us consider the system <m>{\mathbf x}' = A {\mathbf x}</m>, where
             <me>A = \begin{pmatrix} \alpha &amp; \beta \\ - \beta &amp; \alpha \end{pmatrix}</me>
         and <m>\alpha</m> and <m>\beta</m> are nonzero real numbers. The characteristic equation of <m>A</m> is
             <me>\lambda^2 - 2 \alpha \lambda + (\alpha^2 + \beta^2) = 0,</me>
@@ -355,7 +355,7 @@
                 The phase portrait of this solution indicates that we do indeed have a spiral sink (<xref ref="figure-linear04-sink-phase-portrait" />).</p>
         </example>
 
-		<figure xml:id="figure-linear04-sink-phase-portrait">
+        <figure xml:id="figure-linear04-sink-phase-portrait">
             <image width="60%" xml:id="linear04-sink-phase-portrait">
                 <sageplot>
                     x, y ,t = var('x y t')
@@ -397,11 +397,11 @@
                 has an eigenvector <m>(1, -i)</m> with eigenvalue <m>\lambda = 1/10 - i</m>. Thus, the complex solution is
                     <me>\mathbf x(t) = e^{(1/10 - i)t} \begin{pmatrix} 1 \\ -i \end{pmatrix}.</me>
                 Following the procedure that we used in the previous example, the solution to our initial value problem is 
-                    <me>\mathbf x(t) = \frac{1}{2} e^{t/10}  \begin{pmatrix} \sin t \\ \cos t \end{pmatrix},</me>
+                    <me>\mathbf x(t) = \frac{1}{2} e^{t/10} \begin{pmatrix} \sin t \\ \cos t \end{pmatrix},</me>
                 and he phase portrait is a spiral source (<xref ref="figure-linear04-source-phase-portrait" />).</p>
         </example>
 
-		<figure xml:id="figure-linear04-source-phase-portrait">
+        <figure xml:id="figure-linear04-source-phase-portrait">
             <image width="60%" xml:id="linear04-source-phase-portrait">
                 <sageplot>
                     x, y ,t = var('x y t')
@@ -426,8 +426,8 @@
             </image>
             <caption>Phase portrait for a spiral source</caption>
         </figure>
-	
-	</subsection>
+    
+    </subsection>
 
     <subsection xml:id="subsection-linear04-quick-start">
         <title>Solving Systems with Complex Eigenvalues</title>
@@ -442,14 +442,14 @@
         <example>
             <p>The system <m>\mathbf x' = A \mathbf x</m>, where
                 <me>A = \begin{pmatrix} -1 \amp -2 \\ 4 \amp 3 \end{pmatrix}.</me>
-            The characteristic polynomial of <m>A</m> is <m>\lambda^2 - 2 \lambda + 5</m> and so the eigenvalues are complex conjugates, <m>\lambda = 1 + 2i</m> and <m>\overline{\lambda} = 1 - 2i</m>.  It is easy to show that an eigenvector for <m>\lambda = 1 + 2 i</m> is <m>\mathbf v = (1, -1 - i)</m>.  Recalling that <m>e^{i\theta} = \cos \theta + i \sin \theta</m>,
+            The characteristic polynomial of <m>A</m> is <m>\lambda^2 - 2 \lambda + 5</m> and so the eigenvalues are complex conjugates, <m>\lambda = 1 + 2i</m> and <m>\overline{\lambda} = 1 - 2i</m>. It is easy to show that an eigenvector for <m>\lambda = 1 + 2 i</m> is <m>\mathbf v = (1, -1 - i)</m>. Recalling that <m>e^{i\theta} = \cos \theta + i \sin \theta</m>,
                 <md>
                     <mrow>\mathbf x(t) &amp; = e^{(1+2i)t} \mathbf v</mrow>
                     <mrow>&amp; = e^{(1+2i)t} \begin{pmatrix} 1 \\ -1 - i \end{pmatrix}</mrow>
                     <mrow>&amp; = e^{t} e^{2it} \begin{pmatrix} 1 \\ -1 - i \end{pmatrix}</mrow>
                     <mrow>&amp; = e^{t} (\cos 2t + i \sin 2t) \begin{pmatrix} 1 \\ -1 - i\end{pmatrix}</mrow>
-                    <mrow>&amp; = e^{t} \begin{pmatrix} \cos 2t +  i \sin 2t \\ (-1 - i)(\cos 2t + i \sin 2t) \end{pmatrix}</mrow>
-                    <mrow>&amp; = e^{t} \begin{pmatrix} \cos 2t +  i \sin 2t \\ (- \cos 2t + \sin 2t) + i(- \cos 2t - \sin 2t) \end{pmatrix}</mrow>
+                    <mrow>&amp; = e^{t} \begin{pmatrix} \cos 2t + i \sin 2t \\ (-1 - i)(\cos 2t + i \sin 2t) \end{pmatrix}</mrow>
+                    <mrow>&amp; = e^{t} \begin{pmatrix} \cos 2t + i \sin 2t \\ (- \cos 2t + \sin 2t) + i(- \cos 2t - \sin 2t) \end{pmatrix}</mrow>
                     <mrow>&amp; = e^{t}
                     \begin{pmatrix} \cos 2t  \\ - \cos 2t + \sin 2t \end{pmatrix}
                     +
@@ -473,11 +473,11 @@
     </subsection>
 
     <subsection xml:id="subsection-linear04-important-lessons">
-    	<title>Important Lessons</title>
-    	
-    	<p><ul>
-        	
-        	<li>If
+        <title>Important Lessons</title>
+        
+        <p><ul>
+            
+            <li>If
                 <me>A =
                 \begin{pmatrix}
                 \alpha &amp;  \beta \\
@@ -500,56 +500,101 @@
 
         </ul></p>
 
-	</subsection>
+    </subsection>
 <todo>Lots of exercises needed here.</todo>
 
     <exercises xml:id="exercises-linear04"  filenamebase="linear04">
     <title>Exercises</title>
 
+        <exercisegroup cols="2" xml:id="exercises-linear04-solving-linear-systems">
+            <title>Solving Linear Systems with Distinct Real Eigenvalues</title>
+            <introduction><p>Find the general solution of each of the linear systems in <xref ref="exercises-linear04-solving-linear-systems"/>.</p></introduction>
+            <exercise>
+                <statement>
+                    <p><md>
+                        <mrow>x' &amp; = 2x + 2y</mrow>
+                        <mrow>y' &amp; = -4x + 6y</mrow>
+                    </md></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><md>
+                        <mrow>x' &amp; = 2x - 6y</mrow>
+                        <mrow>y' &amp; = 2x + y</mrow>
+                    </md></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><md>
+                        <mrow>x' &amp; = 2x + y</mrow>
+                        <mrow>y' &amp; = -x + 4y</mrow>
+                    </md></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><md>
+                        <mrow>x' &amp; = 4x + 2y</mrow>
+                        <mrow>y' &amp; = -2x - y</mrow>
+                    </md></p>
+                </statement>
+            </exercise>
+        </exercisegroup>
 
-<exercise>
-        <statement>
-            <p>Solve each of the following linear systems for the given initial values.  Sketch the phase plane of each system and determine the nature of the equilibrium solution(s).  Do this first without the use of technology, then check your answer with pplane or equivalent software.
-                <ol>
-
-                    <li><md>
+        <exercisegroup cols="2" xml:id="exercises-linear04-solving-ivps">
+            <title>Solving Initial Value Problems</title>
+            <introduction><p>Solve each of the following linear systems for the given initial values in <xref ref="exercises-linear04-solving-ivps"/>.</p></introduction>
+            <exercise>
+                <statement>
+                    <p><md>
                         <mrow>x' &amp; = 2x + 2y</mrow>
                         <mrow>y' &amp; = -4x + 6y</mrow>
                         <mrow>x(0) &amp; = 2</mrow>
                         <mrow>y(0) &amp; = -3</mrow>
-                    </md></li>
-
-                    <li><md>
+                    </md></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><md>
                         <mrow>x' &amp; = 2x - 6y</mrow>
                         <mrow>y' &amp; = 2x + y</mrow>
                         <mrow>x(0) &amp; = 2</mrow>
                         <mrow>y(0) &amp; = 1</mrow>
-                    </md></li>
-
-                    <li><md>
+                    </md></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><md>
                         <mrow>x' &amp; = 2x + y</mrow>
                         <mrow>y' &amp; = -x + 4y</mrow>
                         <mrow>x(0) &amp; = 1</mrow>
                         <mrow>y(0) &amp; = -1</mrow>
-                    </md></li>
-
-                    <li><md>
+                    </md></p>
+                </statement>
+            </exercise>
+            <exercise>
+                <statement>
+                    <p><md>
                         <mrow>x' &amp; = 4x + 2y</mrow>
                         <mrow>y' &amp; = -2x - y</mrow>
                         <mrow>x(0) &amp; = 1</mrow>
                         <mrow>y(0) &amp; = -1</mrow>
-                    </md></li>
+                    </md></p>
+                </statement>
+            </exercise>
+        </exercisegroup>
 
-                </ol></p>  
-        </statement>
+        <exercise>
+            <statement>
+                <p>For each of the initial value problems in <xref ref="exercises-linear04-solving-ivps"/> sketch the phase portrait and the solution curve. Do this first by hand and then check your answer using <em>Sage</em>.</p>
+            </statement>
+        </exercise>
 
-
-
-    </exercise>
-
-
-
-</exercises>
+    </exercises>
 
     <subsection number="no" xml:id="subsection-linear04-sage-project">
         <title>Project</title>
